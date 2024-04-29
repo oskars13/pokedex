@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Fredoka:wght@300..700&family=Limelight&family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap');
+
+$fontTitle : "Limelight", sans-serif;
+$fontMain: "Poppins", sans-serif;
+$colorMain: #dfdfdf;
+$colorMain2:#c4c3c3;
+$colorBlack: #141414;
+$colorWhite: #e8e8e8;
+
+.pokemonPreview{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+
+    .viewer{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: $colorMain;
+        width: auto;
+        height: auto;
+        border: 10px solid $colorMain2;
+        border-radius: 1rem;
+        padding: 1.5% 2.5%;
+        gap: 50px;
+
+        .image{
+            background-image: radial-gradient(circle, $colorWhite, $colorMain2);
+            height: 40dvh;
+            width: 20dvw;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            
+            img{
+                width: 100%;
+                animation-name: initialBlur;
+                animation-duration: .3s;
+                animation-timing-function: ease-in-out;
+            }
+        }
+        .info{
+            background-color: $colorMain2;
+            height: 40dvh;
+            width: 20dvw;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            gap: .7rem 1rem;
+            border-radius: 1rem;
+
+            .name{
+                position: absolute;
+                top: 1.5rem;
+                left: 1.5rem;
+
+                strong{
+                    font-size: 30px;
+                    font-family: $fontTitle;
+                }
+            }
+        }
+    }
+    .buttons{
+        width: auto;
+        height: auto;
+        background-color: $colorMain;
+        border: 10px solid $colorMain2;
+        padding: 1% 2%;
+        margin-left: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .button{
+            button{
+                background-color: $colorBlack;
+                color: $colorWhite;
+                width: 5dvw;
+                height: 5dvh;
+                cursor: pointer;
+            }
+            .error{
+                background-color: #ad2e2e;
+                border: 2px solid $colorWhite;
+                text-decoration: none;
+            }
+            .accepted{
+                background-color: #3dad2e;
+                border: 2px solid $colorWhite;
+                text-decoration: none;
+            }
+        }
+    }
+    .msgState{
+        font-size: 13px;
+        color: $colorBlack;
+    }
+    .error{
+        color: #ad2e2e;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+@keyframes initialBlur {
+    from{
+        opacity: 0;
+        filter: blur(1.5rem)
+                grayscale(100%);
+    }
+    to{
+        opacity: 100%;
+        filter: none;
+    }
+    
+}
